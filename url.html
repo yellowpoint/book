@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function getQueryString(name) {
+      let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      let r = window.location.search.substring(1).match(reg);
+      if (r != null) {
+        return unescape(r[2]);
+      };
+      return null;
+    }
+    let target = getQueryString('target')
+    target = decodeURIComponent(target)
+    location.href = target
+  </script>
+
+</body>
+
+</html>
