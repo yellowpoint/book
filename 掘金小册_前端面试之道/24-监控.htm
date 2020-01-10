@@ -29,7 +29,7 @@
 <p>另一种无埋点的方式基本不需要开发者手写埋点了，而是统计所有的事件并且定时上报。这种方式虽然没有前一种方式繁琐了，但是因为统计的是所有事件，所以还需要后期过滤出需要的数据。</p>
 <h2 class="heading" data-id="heading-2">性能监控</h2>
 <p>性能监控可以很好的帮助开发者了解在各种真实环境下，页面的性能情况是如何的。</p>
-<p>对于性能监控来说，我们可以直接使用浏览器自带的 <a target="_blank" href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FAPI%2FPerformance" rel="nofollow noopener noreferrer">Performance API</a> 来实现这个功能。</p>
+<p>对于性能监控来说，我们可以直接使用浏览器自带的 <a target="_blank" href="../url.html?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FAPI%2FPerformance" rel="nofollow noopener noreferrer">Performance API</a> 来实现这个功能。</p>
 <p>对于性能监控来说，其实我们只需要调用 <code>performance.getEntriesByType('navigation')</code> 这行代码就行了。对，你没看错，一行代码我们就可以获得页面中各种详细的性能相关信息。</p>
 <p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/7/168c82d1976cc115?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="444" data-height="570" src="./24-监控_files/168c82d1976cc115"><figcaption></figcaption></figure><p></p>
 <p>我们可以发现这行代码返回了一个数组，内部包含了相当多的信息，从数据开始在网络中传输到页面加载完成都提供了相应的数据。</p>

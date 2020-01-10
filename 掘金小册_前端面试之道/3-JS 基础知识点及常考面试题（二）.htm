@@ -41,7 +41,7 @@
 <blockquote class="warning"><p>思考题：看完了上面的步骤，对于 [] == ![] 你是否能正确写出答案呢？
 </p></blockquote><p>如果你觉得记忆步骤太麻烦的话，我还提供了流程图供大家使用：</p>
 <p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2018/12/19/167c4a2627fe55f1?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1005" data-height="426" src="./3-JS 基础知识点及常考面试题（二）_files/167c4a2627fe55f1"><figcaption></figcaption></figure><p></p>
-<p>当然了，这个流程图并没有将所有的情况都列举出来，我这里只将常用到的情况列举了，如果你想了解更多的内容可以参考 <a target="_blank" href="https://link.juejin.im/?target=https%3A%2F%2Fwww.ecma-international.org%2Fecma-262%2F5.1%2F%23sec-11.9.1" rel="nofollow noopener noreferrer">标准文档</a>。</p>
+<p>当然了，这个流程图并没有将所有的情况都列举出来，我这里只将常用到的情况列举了，如果你想了解更多的内容可以参考 <a target="_blank" href="../url.html?target=https%3A%2F%2Fwww.ecma-international.org%2Fecma-262%2F5.1%2F%23sec-11.9.1" rel="nofollow noopener noreferrer">标准文档</a>。</p>
 <p>对于 <code>===</code> 来说就简单多了，就是判断两者类型和值是否相同。</p>
 <h2 class="heading" data-id="heading-2">闭包</h2>
 <blockquote class="warning"><p>涉及面试题：什么是闭包？
@@ -193,7 +193,7 @@ obj.b.d = obj.b
   <span class="hljs-built_in">console</span>.log(clone)
 }
 test()
-</code></pre><p>当然你可能想自己来实现一个深拷贝，但是其实实现一个深拷贝是很困难的，需要我们考虑好多种边界情况，比如原型链如何处理、DOM 如何处理等等，所以这里我们实现的深拷贝只是简易版，并且我其实更推荐使用 <a target="_blank" href="https://link.juejin.im/?target=https%3A%2F%2Flodash.com%2Fdocs%23cloneDeep" rel="nofollow noopener noreferrer">lodash 的深拷贝函数</a>。</p>
+</code></pre><p>当然你可能想自己来实现一个深拷贝，但是其实实现一个深拷贝是很困难的，需要我们考虑好多种边界情况，比如原型链如何处理、DOM 如何处理等等，所以这里我们实现的深拷贝只是简易版，并且我其实更推荐使用 <a target="_blank" href="../url.html?target=https%3A%2F%2Flodash.com%2Fdocs%23cloneDeep" rel="nofollow noopener noreferrer">lodash 的深拷贝函数</a>。</p>
 <pre><code class="hljs js" lang="js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepClone</span>(<span class="hljs-params">obj</span>) </span>{
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isObject</span>(<span class="hljs-params">o</span>) </span>{
     <span class="hljs-keyword">return</span> (<span class="hljs-keyword">typeof</span> o === <span class="hljs-string">'object'</span> || <span class="hljs-keyword">typeof</span> o === <span class="hljs-string">'function'</span>) &amp;&amp; o !== <span class="hljs-literal">null</span>

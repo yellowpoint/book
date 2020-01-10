@@ -59,7 +59,7 @@
 </p></blockquote><p>对于这道题目来说，首先我们肯定不能一次性把几万个 DOM 全部插入，这样肯定会造成卡顿，所以解决问题的重点应该是如何分批次部分渲染 DOM。大部分人应该可以想到通过 <code>requestAnimationFrame</code> 的方式去循环的插入 DOM，其实还有种方式去解决这个问题：<strong>虚拟滚动</strong>（virtualized scroller）。</p>
 <p><strong>这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。</strong></p>
 <p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2018/12/15/167b1c6887ecbba7?imageslim" data-width="1204" data-height="380" src="./13-浏览器渲染原理_files/167b1c6887ecbba7"><figcaption></figcaption></figure><p></p>
-<p>从上图中我们可以发现，即使列表很长，但是渲染的 DOM 元素永远只有那么几个，当我们滚动页面的时候就会实时去更新 DOM，这个技术就能顺利解决这道经典面试题。如果你想了解更多的内容可以了解下这个 <a target="_blank" href="https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Fbvaughn%2Freact-virtualized" rel="nofollow noopener noreferrer">react-virtualized</a>。</p>
+<p>从上图中我们可以发现，即使列表很长，但是渲染的 DOM 元素永远只有那么几个，当我们滚动页面的时候就会实时去更新 DOM，这个技术就能顺利解决这道经典面试题。如果你想了解更多的内容可以了解下这个 <a target="_blank" href="../url.html?target=https%3A%2F%2Fgithub.com%2Fbvaughn%2Freact-virtualized" rel="nofollow noopener noreferrer">react-virtualized</a>。</p>
 <h2 class="heading" data-id="heading-5">什么情况阻塞渲染</h2>
 <p>首先渲染的前提是生成渲染树，所以 HTML 和 CSS 肯定会阻塞渲染。如果你想渲染的越快，你越应该降低一开始需要渲染的文件<strong>大小</strong>，并且<strong>扁平层级，优化选择器</strong>。</p>
 <p>然后当浏览器在解析到 <code>script</code> 标签时，会暂停构建 DOM，完成后才会从暂停的地方重新开始。也就是说，如果你想首屏渲染的越快，就越不应该在首屏就加载 JS 文件，这也是都建议将 <code>script</code> 标签放在 <code>body</code> 标签底部的原因。</p>
@@ -94,7 +94,7 @@
 <li>更新界面</li>
 <li>以上就是一帧中可能会做的事情。如果在一帧中有空闲时间，就会去执行 <code>requestIdleCallback</code> 回调。</li>
 </ol>
-<p>以上内容来自于 <a target="_blank" href="https://link.juejin.im/?target=https%3A%2F%2Fhtml.spec.whatwg.org%2Fmultipage%2Fwebappapis.html%23event-loop-processing-model" rel="nofollow noopener noreferrer">HTML 文档</a>。</p>
+<p>以上内容来自于 <a target="_blank" href="../url.html?target=https%3A%2F%2Fhtml.spec.whatwg.org%2Fmultipage%2Fwebappapis.html%23event-loop-processing-model" rel="nofollow noopener noreferrer">HTML 文档</a>。</p>
 <p>既然我们已经知道了重绘和回流会影响性能，那么接下来我们将会来学习如何减少重绘和回流的次数。</p>
 <h3 class="heading" data-id="heading-7">减少重绘和回流</h3>
 <ul>

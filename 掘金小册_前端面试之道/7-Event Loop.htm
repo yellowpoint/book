@@ -88,7 +88,7 @@ setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span
 }).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'async1 end'</span>)
 })
-</code></pre><p>也就是说，如果 <code>await</code> 后面跟着 <code>Promise</code> 的话，<code>async1 end</code> 需要等待三个 tick 才能执行到。那么其实这个性能相对来说还是略慢的，所以 V8 团队借鉴了 Node 8 中的一个 Bug，在引擎底层将三次 tick 减少到了二次 tick。但是这种做法其实是违法了规范的，当然规范也是可以更改的，这是 V8 团队的一个 <a target="_blank" href="https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Ftc39%2Fecma262%2Fpull%2F1250" rel="nofollow noopener noreferrer">PR</a>，目前已被同意这种做法。</p>
+</code></pre><p>也就是说，如果 <code>await</code> 后面跟着 <code>Promise</code> 的话，<code>async1 end</code> 需要等待三个 tick 才能执行到。那么其实这个性能相对来说还是略慢的，所以 V8 团队借鉴了 Node 8 中的一个 Bug，在引擎底层将三次 tick 减少到了二次 tick。但是这种做法其实是违法了规范的，当然规范也是可以更改的，这是 V8 团队的一个 <a target="_blank" href="../url.html?target=https%3A%2F%2Fgithub.com%2Ftc39%2Fecma262%2Fpull%2F1250" rel="nofollow noopener noreferrer">PR</a>，目前已被同意这种做法。</p>
 <p>所以 Event Loop 执行顺序如下所示：</p>
 <ul>
 <li>首先执行同步代码，这属于宏任务</li>

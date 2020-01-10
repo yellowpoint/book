@@ -52,7 +52,7 @@
 <p>在所有浏览器缓存中，Disk Cache 覆盖面基本是最大的。它会根据 HTTP Herder 中的字段判断哪些资源需要缓存，哪些资源可以不请求直接使用，哪些资源已经过期需要重新请求。<strong>并且即使在跨站点的情况下，相同地址的资源一旦被硬盘缓存下来，就不会再次去请求数据。</strong></p>
 <h3 class="heading" data-id="heading-5">Push Cache</h3>
 <p>Push Cache 是 HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用。<strong>并且缓存时间也很短暂，只在会话（Session）中存在，一旦会话结束就被释放。</strong></p>
-<p>Push Cache 在国内能够查到的资料很少，也是因为 HTTP/2 在国内不够普及，但是 HTTP/2 将会是日后的一个趋势。这里推荐阅读 <a target="_blank" href="https://link.juejin.im/?target=https%3A%2F%2Fjakearchibald.com%2F2017%2Fh2-push-tougher-than-i-thought%2F" rel="nofollow noopener noreferrer">HTTP/2 push is tougher than I thought</a> 这篇文章，但是内容是英文的，我翻译一下文章中的几个结论，有能力的同学还是推荐自己阅读</p>
+<p>Push Cache 在国内能够查到的资料很少，也是因为 HTTP/2 在国内不够普及，但是 HTTP/2 将会是日后的一个趋势。这里推荐阅读 <a target="_blank" href="../url.html?target=https%3A%2F%2Fjakearchibald.com%2F2017%2Fh2-push-tougher-than-i-thought%2F" rel="nofollow noopener noreferrer">HTTP/2 push is tougher than I thought</a> 这篇文章，但是内容是英文的，我翻译一下文章中的几个结论，有能力的同学还是推荐自己阅读</p>
 <ul>
 <li>所有的资源都能被推送，但是 Edge 和 Safari 浏览器兼容性不怎么好</li>
 <li>可以推送 <code>no-cache</code> 和 <code>no-store</code> 的资源</li>
